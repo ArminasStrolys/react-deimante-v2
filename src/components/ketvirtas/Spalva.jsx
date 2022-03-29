@@ -5,7 +5,10 @@ const Spalva = () => {
     return (
         <div>
             {data.map((e,i)=>{
-                return ` (${i} `+ e.color + ') '
+                if (e.color === 'yellow') {
+                    return <span key={e.id} style={{backgroundColor:'yellow'}}> ({i}) {e.color} </span> 
+                }
+                return <span key={e.id} style={{color:`${e.color}`}}> ({i}) {e.color} </span> 
             })}
         </div>
     );

@@ -5,7 +5,10 @@ const Vardas = () => {
     return (
         <div>
             {data.map((e,i)=>{
-                return ` (${i} `+ e.name + ') '
+                if (e.color === 'yellow') {
+                    return <span key={e.id} style={{backgroundColor:'yellow'}}> ({i}) {e.name} </span> 
+                }
+                return <span key={e.id} style={{color:`${e.color}`}}> ({i}) {e.name} </span> 
             })}
         </div>
     );

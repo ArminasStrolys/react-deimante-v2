@@ -5,8 +5,10 @@ const Tipas = () => {
     return (
         <div>
             {data.map((e,i)=>{
-                console.log(e.type)
-                return ` (${i} `+ e.type + ') '
+                if (e.color === 'yellow') {
+                    return <span key={e.id} style={{backgroundColor:'yellow'}}> ({i}) {e.color} </span> 
+                }
+                return <span key={e.id} style={{color:`${e.color}`}}> ({i}) {e.color} </span> 
             })}
         </div>
     );
