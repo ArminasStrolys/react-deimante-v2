@@ -1,10 +1,9 @@
 import React from 'react'
-import data from "../../data/data";
 
-export default function Laivas() {
+export default function Laivas(props) {
   return (
     <div>
-        {data.map((e, i)=>{
+        {props.info.map((e, i)=>{
             if (e.type === 'car'){
                 return <span key={e.id} style={{color:`${e.color}`}}> CAR ({i})</span>
             }

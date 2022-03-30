@@ -1,10 +1,9 @@
 import React from 'react'
-import data from "../../data/data";
 
-export default function Valtis() {
+export default function Valtis(props) {
   return (
     <div>
-        {data.map((e, i)=>{
+        {props.info.map((e, i)=>{
           if (e.color === 'yellow' && e.type === 'man'){
             return <span key={e.id} style={{backgroundColor:'yellow'}}> VALTIS ({i})</span>
           }
